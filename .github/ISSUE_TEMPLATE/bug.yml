@@ -1,0 +1,33 @@
+name: "[BUG] Relato de erro"
+description: Algo não funciona como deveria
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: tela
+    attributes:
+      label: "[01] TELA"
+      options: [HOME, PAINEL, TRANSAÇÕES, METAS, ASSISTENTE, OUTRA]
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: "[02] PASSOS PARA REPRODUZIR"
+      placeholder: "1. abrir PAINEL\n2. clicar em + NOVO GASTO\n3. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: "[03] ESPERADO × OBTIDO"
+    validations:
+      required: true
+  - type: input
+    id: navegador
+    attributes:
+      label: "[04] NAVEGADOR / VERSÃO"
+  - type: textarea
+    id: captura
+    attributes:
+      label: "[05] CAPTURA"

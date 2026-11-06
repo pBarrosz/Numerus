@@ -1,0 +1,30 @@
+name: "[FEAT] Nova funcionalidade"
+description: Proposta de algo novo
+title: "[FEAT] "
+labels: ["feat"]
+body:
+  - type: dropdown
+    id: tela
+    attributes:
+      label: "[01] TELA"
+      options: [HOME, PAINEL, TRANSAÇÕES, METAS, ASSISTENTE, NOVA TELA]
+    validations:
+      required: true
+  - type: textarea
+    id: problema
+    attributes:
+      label: "[02] PROBLEMA"
+      description: Que dor do usuário isso resolve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposta
+    attributes:
+      label: "[03] PROPOSTA"
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: "[04] CRITÉRIOS DE ACEITE"
+      placeholder: "- [ ] ...\n- [ ] ..."

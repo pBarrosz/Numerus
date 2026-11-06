@@ -1,0 +1,117 @@
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-radius: var(--nm-radius);
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--nm-off-white);
+  color: var(--nm-black);
+  font-family: var(--nm-font);
+  font-size: var(--nm-size-body);
+}
+
+a {
+  color: var(--nm-black);
+}
+a:hover {
+  color: var(--nm-hover);
+}
+
+/* app shell: black sidebar + main, framed by an 8px border */
+.nm-shell {
+  min-height: 100vh;
+  border: var(--nm-border-frame);
+  display: flex;
+}
+
+.nm-sidebar {
+  width: 260px;
+  background: var(--nm-black);
+  color: var(--nm-off-white);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.nm-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--nm-off-white);
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: var(--nm-weight-display);
+  letter-spacing: var(--nm-tracking-display);
+}
+
+.nm-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nm-nav a {
+  display: block;
+  padding: 12px 14px;
+  border: 4px solid transparent;
+  color: var(--nm-off-white);
+  text-decoration: none;
+  font-weight: var(--nm-weight-display);
+  letter-spacing: 0.06em;
+}
+
+.nm-nav a.active {
+  background: var(--nm-green);
+  border: var(--nm-border-button);
+  color: var(--nm-black);
+}
+
+.nm-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.nm-page-header {
+  border-bottom: var(--nm-border-frame);
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.nm-eyebrow {
+  font-size: var(--nm-size-label);
+  font-weight: var(--nm-weight-label);
+  letter-spacing: 0.1em;
+}
+
+.nm-h1 {
+  margin: 0;
+  font-size: var(--nm-size-h1);
+  font-weight: var(--nm-weight-display);
+  letter-spacing: var(--nm-tracking-display);
+  line-height: 1;
+}
+
+.nm-content {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.nm-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

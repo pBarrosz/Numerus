@@ -1,0 +1,48 @@
+/* numerus design tokens — brutalist identity */
+/* rule: green is fill only. never green text on off-white. */
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap");
+
+:root {
+  /* color */
+  --nm-black: #0A0A0A;
+  --nm-off-white: #F2F0E9;
+  --nm-green: #149E48;
+  --nm-green-dark: #0E7F39;
+  --nm-grid: #DCD9CF;      /* background grid lines */
+  --nm-muted: #CFCBBF;     /* future / inactive bars */
+  --nm-hover: #333333;
+
+  /* type */
+  --nm-font: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --nm-weight-body: 400;
+  --nm-weight-medium: 500;
+  --nm-weight-label: 700;
+  --nm-weight-display: 800;
+  --nm-tracking-display: -0.05em;
+  --nm-tracking-label: 0.08em;
+
+  --nm-size-label: 12px;
+  --nm-size-body: 14px;
+  --nm-size-lead: 16px;
+  --nm-size-kpi: 34px;
+  --nm-size-h1: 40px;
+  --nm-size-hero: 72px;
+
+  /* space — 1u = 8px */
+  --nm-u: 8px;
+  --nm-space-1: 8px;
+  --nm-space-2: 16px;
+  --nm-space-3: 24px;
+  --nm-space-4: 32px;
+
+  /* borders — no radius anywhere */
+  --nm-border-frame: 8px solid var(--nm-black);
+  --nm-border-card: 6px solid var(--nm-black);
+  --nm-border-button: 4px solid var(--nm-black);
+  --nm-border-row: 3px solid var(--nm-black);
+  --nm-radius: 0;
+
+  /* hard offset shadow for primary actions */
+  --nm-shadow: 5px 5px 0 var(--nm-black);
+}

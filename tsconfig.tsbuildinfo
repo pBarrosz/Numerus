@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/components/AppShell.tsx","./src/components/Mark.tsx","./src/components/ui.tsx","./src/lib/currency.ts","./src/pages/Assistente.tsx","./src/pages/Home.tsx","./src/pages/Metas.tsx","./src/pages/Painel.tsx","./src/pages/Transacoes.tsx"],"version":"5.9.3"}
