@@ -4,6 +4,7 @@ import Mark from "./Mark";
 const NAV = [
   { to: "/app", label: "PAINEL", end: true },
   { to: "/app/transacoes", label: "TRANSAÇÕES" },
+  { to: "/app/categorias", label: "CATEGORIAS" },
   { to: "/app/metas", label: "METAS" },
   { to: "/app/assistente", label: "ASSISTENTE" },
 ];

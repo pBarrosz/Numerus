@@ -1,0 +1,1 @@
+Integre o pluggy(versão sandbox) no APP, para ter uma análise melhor de como o aplicativo será

@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
+import { formatBRL } from "../lib/currency";
 
 // kpi tile — variants follow the painel design
 type KpiVariant = "dark" | "light" | "accent";
@@ -31,12 +32,27 @@ export function Card({ title, meta, children }: { title: string; meta?: string; 
 }
 
 // primary = green fill + hard shadow; secondary = black fill
-export function Button({ children, variant = "primary", onClick }: { children: ReactNode; variant?: "primary" | "secondary"; onClick?: () => void }) {
+export function Button({
+  children,
+  variant = "primary",
+  onClick,
+  type = "button",
+  disabled,
+}: {
+  children: ReactNode;
+  variant?: "primary" | "secondary";
+  onClick?: () => void;
+  type?: "button" | "submit";
+  disabled?: boolean;
+}) {
   const primary = variant === "primary";
   return (
     <button
+      type={type}
       onClick={onClick}
+      disabled={disabled}
       style={{
+        opacity: disabled ? 0.5 : 1,
         fontFamily: "var(--nm-font)",
         fontSize: 14,
         fontWeight: 800,
@@ -46,7 +62,7 @@ export function Button({ children, variant = "primary", onClick }: { children: R
         background: primary ? "var(--nm-green)" : "var(--nm-black)",
         color: primary ? "var(--nm-black)" : "var(--nm-off-white)",
         boxShadow: primary ? "var(--nm-shadow)" : "none",
-        cursor: "pointer",
+        cursor: disabled ? "not-allowed" : "pointer",
       }}
     >
       {children}
@@ -65,12 +81,31 @@ export function ProgressBar({ label, spent, cap }: { label: string; spent: numbe
           {label}{" "}
           {over && <span style={{ background: "var(--nm-black)", color: "var(--nm-off-white)", padding: "2px 6px", fontSize: 11 }}>ACIMA</span>}
         </span>
-        <span>R$ {spent} / {cap}</span>
+        <span>{formatBRL(spent)} / {formatBRL(cap)}</span>
       </div>
       <div style={{ height: 16, border: "var(--nm-border-row)" }}>
         <div style={{ width: `${pct}%`, height: "100%", background: over ? "var(--nm-green)" : "var(--nm-black)" }} />
       </div>
     </div>
+  );
+}
+
+export function Badge({ children, dark }: { children: ReactNode; dark?: boolean }) {
+  return (
+    <span
+      style={{
+        border: "var(--nm-border-row)",
+        fontSize: 11,
+        fontWeight: 800,
+        letterSpacing: "0.1em",
+        padding: "2px 6px",
+        background: dark ? "var(--nm-black)" : "transparent",
+        color: dark ? "var(--nm-off-white)" : "var(--nm-black)",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {children}
+    </span>
   );
 }
 

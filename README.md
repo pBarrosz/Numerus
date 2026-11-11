@@ -92,6 +92,16 @@ npm run dev        # http://localhost:5173
 | `npm run lint` | eslint |
 | `npm run typecheck` | tsc sem emitir |
 
+### Pluggy (sandbox)
+
+Sem configuração o app usa dados de exemplo. Para analisar movimentações bancárias via [Pluggy](https://pluggy.ai):
+
+1. Crie uma aplicação no [dashboard do Pluggy](https://dashboard.pluggy.ai) (aplicações novas já têm os conectores sandbox).
+2. Copie `.env.example` para `.env` e preencha `PLUGGY_CLIENT_ID` e `PLUGGY_CLIENT_SECRET`.
+3. Rode `npm run dev`, vá ao **PAINEL → CONECTAR BANCO**, escolha **Pluggy Bank** e entre com `user-ok` / `password-ok` (MFA: `123456`).
+
+As credenciais ficam só no servidor do Vite (`server/pluggy.ts`, rotas `/api/pluggy/*`); o navegador recebe apenas o connect token e os dados. Essas rotas existem no `npm run dev` e no `npm run preview` — em produção será preciso um backend próprio.
+
 <img src="assets/brand/section-06.svg" alt="[06] DESIGN" width="100%">
 
 <img src="assets/brand/palette.svg" alt="Paleta: #0A0A0A, #F2F0E9, #149E48" width="100%">
